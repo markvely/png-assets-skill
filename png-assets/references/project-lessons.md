@@ -5,7 +5,7 @@ These lessons came from two validated workflows: an app function-icon set and a 
 ## App Function Icon Set
 
 - Anchor generation to the approved brand icon or current visual baseline. Do not use archived or rejected icon directions as the source of truth.
-- A sprite sheet is acceptable for icon sets when it is a strict grid, has wide key-color gutters, and each cell contains exactly one icon.
+- A sprite sheet is acceptable only for highly standardized icon systems when it is a strict grid, has wide key-color gutters, and each cell contains exactly one icon with the same live-area and shape rules.
 - Prompt exact count, grid, reading order, style, colors, and icon meanings. Ambiguity creates inconsistent icons.
 - Crop each cell into an independent transparent PNG, then normalize via alpha bbox to a stable live area.
 - Use optical offsets for icons that look visually off-center despite mathematically centered bboxes.
@@ -16,6 +16,7 @@ These lessons came from two validated workflows: an app function-icon set and a 
 
 - A campaign page must be assembled from controllable assets, not one generated poster.
 - Generate hero characters, selectable objects, reward icons, CTA ornaments, title signs, and badges as separate files.
+- Generate H5/page assets one by one by default. Do not combine multiple rewards, props, characters, or title elements into a shared canvas.
 - Key gameplay objects should themselves be clickable or sit directly above their button. Avoid "big illustration plus separate list" when the object is the choice.
 - If a generated source contains several important objects in one image, regenerate each object separately. Do not use the whole sheet as the page visual.
 - Keep operational text, prices, odds, values, buttons, and rules code-native so they remain editable and responsive.

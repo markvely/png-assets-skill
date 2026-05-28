@@ -11,6 +11,8 @@ Use this as the single skill for PNG asset generation and application. It owns t
 
 Do not treat image generation as a final poster unless the user explicitly asks for one. Build with controllable assets: text, values, buttons, rules, routing, and interaction stay native to the target surface; PNGs carry visual material such as backgrounds, characters, props, product objects, rewards, badges, icon glyphs, title frames, stickers, textures, and decorative accents.
 
+Generate one source image per asset by default. Do not combine multiple assets into one generated canvas to save time or calls. A shared canvas is allowed only for highly standardized sets whose members must match the same design system and shape rules, such as app function icons, same-size state variants, or another strict icon-like system.
+
 ## Workflow
 
 1. Read local project instructions first. Follow existing asset paths, naming, style, build, and design-system conventions.
@@ -22,8 +24,8 @@ Do not treat image generation as a final poster unless the user explicitly asks 
    - native UI: text, prices, buttons, forms, rules, countdowns, tabs, lists, state labels
    - full backgrounds: scene, atmosphere, texture, hero backdrop, no alpha needed
    - transparent cutouts: characters, products, props, rewards, badges, icons, stickers, ornaments
-4. Default to one independent image per important subject. Do not generate a collage of several key assets and then depend on awkward cropping.
-5. Use sprite sheets only for same-type, grid-aligned assets such as app function icons or tiny decorations. Cut the sheet into independent PNGs before final use.
+4. Default to one generation request and one source image per important subject. Do not generate a collage of several assets and then depend on cropping.
+5. Use a shared canvas only for highly similar, standards-bound assets: app function icon sets, same-shape icon state variants, or another strict grid system where every item has the same design rules, visual weight, live area, and shape constraints. Cut the sheet into independent PNGs before final use.
 6. Generate transparent-target assets on a flat chroma-key background:
    - default `#00ff00`
    - use `#ff00ff` when the subject contains green, jade, leaves, moss, neon-green, or green-tinted highlights
@@ -58,13 +60,13 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/verify_png_assets
 - **Apps**: follow the app's asset catalog/static-resource conventions; create size variants only when the platform or repo expects them; verify icons at target sizes such as 24pt, 32pt, 48pt, and any launcher/app-icon sizes.
 - **Websites/H5**: keep operational text and controls in HTML/CSS/JS; use PNGs as layered images, backgrounds, reward icons, hero objects, and decorative materials; verify local asset references with `check_html_asset_refs.py`.
 - **Design/deck/social output**: use transparent PNGs as composable visual elements; export contact sheets or final canvases only after checking edges against the actual background color.
-- **Icon systems**: use approved brand/current visual references as anchors; sprite sheets are acceptable only with strict grid, wide gutters, exact count, and one glyph per cell.
+- **Icon systems**: use approved brand/current visual references as anchors; sprite sheets are acceptable only when the set is highly standardized, with strict grid, wide gutters, exact count, one glyph per cell, and consistent shape/live-area rules.
 - **Full backgrounds**: use for atmosphere and scene depth only. Do not bake UI copy, prices, editable labels, rules, or button states into background art.
 
 ## Decision Rules
 
-- Use independent assets when an element needs separate placement, animation, z-index, click handling, state, reuse, or replacement.
-- Use sprite sheets for many same-type small assets only when they can be cut cleanly into separate files.
+- Use independent assets by default, especially when an element needs separate placement, animation, z-index, click handling, state, reuse, replacement, or visual judgment.
+- Use shared canvases only for standardized icon-like systems that must be generated together for consistency. Do not use shared canvases for characters, rewards, props, title boards, products, H5 choices, stickers, hero art, or decorative one-offs.
 - Use magenta key instead of green when the subject contains green or greenish transparency.
 - Regenerate instead of patching when a source combines unrelated objects or has contaminated edges.
 - Keep raw sources when later reprocessing is likely; use versioned final filenames instead of overwriting stable assets.

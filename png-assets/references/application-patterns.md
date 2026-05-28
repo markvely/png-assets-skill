@@ -42,7 +42,7 @@ Rules:
 - Check local references:
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/check_html_asset_refs.py" <page.html>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/check_html_asset_refs.py" <page.html>
 ```
 
 ## Standalone Mobile H5 Shell

@@ -1,9 +1,9 @@
 ---
-name: generate-png-assets
+name: png-assets
 description: Generate and apply reusable PNG design assets across apps, websites, H5/HTML campaign pages, presentations, design comps, app icon systems, game-like props, stickers, rewards, characters, and UI decorations. Use when Codex needs to plan PNG asset inventory, create AI-generated raster assets, remove green/magenta chroma-key backgrounds, cut sprite sheets, validate alpha quality, place assets into a local project, implement them in app/web/design surfaces, or replace placeholder CSS/SVG blocks with controllable production-style PNG material.
 ---
 
-# Generate PNG Assets
+# PNG Assets
 
 Use this as the single skill for PNG asset generation and application. It owns the full path from visual planning to usable files: inventory, prompt strategy, chroma-key generation, alpha extraction, verification, and integration into apps, websites, H5 pages, prototypes, decks, or design compositions.
 
@@ -47,7 +47,7 @@ If a visible key-color fringe remains, retry once with `--edge-contract 1`.
 10. Verify final PNGs:
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
 ```
 
 11. Integrate assets into the target surface. Use stable sizing, `object-fit: contain`, fixed icon boxes, asset catalogs, responsive constraints, or design-frame dimensions as appropriate.

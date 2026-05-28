@@ -7,7 +7,7 @@ Use this checklist before handing off generated PNG assets or a surface that use
 Check PNG transparency:
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
 ```
 
 For transparent cutouts, failures to fix:
@@ -22,7 +22,7 @@ For transparent cutouts, failures to fix:
 For standalone HTML or H5 pages, check static asset paths:
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/check_html_asset_refs.py" <page.html>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/check_html_asset_refs.py" <page.html>
 ```
 
 Run the repo's build, lint, or preview command when integrating into an existing app or website.

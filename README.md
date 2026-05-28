@@ -1,4 +1,4 @@
-# PNG 素材生成与应用 Skill
+# PNG 素材 Skill
 
 这是一个可复用的 Codex skill，用于生成、抠图、验证并应用透明 PNG 素材，覆盖 App、网站、H5 活动页、设计稿、演示文稿、社媒图、icon 系统、角色、道具、奖励素材等场景。
 
@@ -12,23 +12,23 @@
 
 ## 安装
 
-把 `generate-png-assets` 目录复制到你的 Codex skills 目录：
+把 `png-assets` 目录复制到你的 Codex skills 目录：
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R generate-png-assets "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R png-assets "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
 重新打开 Codex 或刷新 skill 列表后，可使用显示名：
 
 ```text
-PNG 素材生成与应用
+PNG 素材
 ```
 
 ## 目录
 
 ```text
-generate-png-assets/
+png-assets/
   SKILL.md
   agents/openai.yaml
   references/
@@ -47,19 +47,19 @@ generate-png-assets/
 验证 PNG 透明度和主体裁切：
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/verify_png_assets.py" <asset-dir-or-files>
 ```
 
 批量绿幕/洋红幕抠图：
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/batch_remove_chroma_key.py" <raw-png-dir> --out-dir <output-dir>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/batch_remove_chroma_key.py" <raw-png-dir> --out-dir <output-dir>
 ```
 
 检查 HTML 中的本地资源引用：
 
 ```bash
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/generate-png-assets/scripts/check_html_asset_refs.py" <page.html>
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/png-assets/scripts/check_html_asset_refs.py" <page.html>
 ```
 
 ## 适用场景

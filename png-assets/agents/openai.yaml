@@ -1,4 +1,4 @@
 interface:
   display_name: "PNG 素材"
-  short_description: "生成、抠图、验证并应用 PNG 素材到 App、网站、H5 和设计"
-  default_prompt: "帮我为这个 App、网站、H5 或设计场景规划并生成可落地的 PNG 素材，完成抠图、验证和应用。"
+  short_description: "生成透明 PNG 素材，验证并应用到 App、网站、H5 和设计"
+  default_prompt: "帮我为这个 App、网站、H5 或设计场景规划并生成可落地的透明 PNG 素材，完成验证和应用。"

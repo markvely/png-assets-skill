@@ -25,7 +25,15 @@ These lessons came from two validated workflows: an app function-icon set and a 
 
 ## Chroma-Key Lessons
 
+- Direct transparent PNG output is the preferred first attempt when the image model supports alpha. It removes a processing step and avoids key-color contamination.
+- Chroma-key remains the fallback for opaque mattes, dirty alpha, bad semi-transparent edges, or tools that cannot produce true alpha.
 - Default green key works for warm, dark, gold, orange, black, cream, and many blue assets.
 - Use magenta key when the subject contains green, moss, jade, leaf, neon-green, or green-tinted highlights.
 - `--despill` handles normal edge tint; `--edge-contract 1` is useful when a visible halo remains.
 - Transparent PNG verification must include both script checks and visual checks on the actual target background.
+
+## Asset Quality Lessons
+
+- Reject assets that look assembled from basic geometry, CSS/SVG primitives, icon fonts, emoji, or generic pictograms. They usually feel cheap in apps, websites, and campaign pages.
+- For finished PNG material, require coherent lighting, material, depth, silhouette, and edge polish.
+- Simple geometry is acceptable only for deliberate wireframes, placeholders, or strict flat icon systems that the user explicitly requested.

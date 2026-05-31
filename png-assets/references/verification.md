@@ -14,10 +14,14 @@ For transparent cutouts, failures to fix:
 
 - Missing alpha channel.
 - Non-transparent corners.
+- Opaque white, gray, black, or checkerboard matte where alpha was requested.
 - Subject almost fills the canvas and risks cropping.
 - Subject bbox is empty or tiny.
 - Visible green or magenta fringe.
 - Multiple separated subjects in one file.
+- Crude geometric assembly: obvious circles, rounded rectangles, triangles, gradients, emoji, icon-font symbols, or simple SVG/CSS-like shapes pretending to be finished assets.
+
+If direct transparent output repeatedly fails, regenerate the source with a flat green or magenta chroma-key background and remove it with the bundled fallback flow.
 
 For standalone HTML or H5 pages, check static asset paths:
 
@@ -41,6 +45,7 @@ Check:
 - asset style is consistent across the set
 - subject is readable at target size
 - edges look clean on the real background
+- asset reads as designed raster material, not placeholder geometry
 - no stretching, blurring, accidental cropping, or shadow mismatch
 - important text or controls are not placed over busy image details
 - decorative assets do not block clicks or gestures
